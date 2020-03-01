@@ -1,55 +1,72 @@
-// Plus Minus Button Start
-var btnAdd = document.getElementById("plusBtn");
-var btnAdd2 = document.getElementById("plusBtn2");
-var btnSub = document.getElementById("minusBtn")
-var btnSub2 = document.getElementById("minusBtn2")
-var inputField = document.getElementById("input");
-var inputField2 = document.getElementById("input2");
+// first item 
+const addItem = document.getElementById("plusBtn");
+addItem.addEventListener("click",function(){
+    const inputItem1 = document.getElementById("input").value++;
+    const firstItem = document.getElementById("price").innerText;
+    const firstItemNum = parseFloat(firstItem);
+    const addItemOne = firstItemNum + 1219;
 
-addBTN(btnAdd,inputField);
-addBTN(btnAdd2,inputField2);
-subBtn(btnSub,inputField);
-subBtn(btnSub2,inputField2);
+    document.getElementById("price").innerText =addItemOne;
+    const subTotal =document.getElementById("subtotal").innerText;
+    const subTotalNum = parseFloat(subTotal);
+    const totalAmount = subTotalNum + 1219;
+    document.getElementById("subtotal").innerText = totalAmount;
+    document.getElementById("total").innerText = totalAmount;
 
-var a = inputField.value;
-var b = parseFloat(a);
+});
 
-var c = inputField2.value;
-var d = parseFloat(c);
-
-
-function addBTN(a,b){
-    a.addEventListener("click",function(){
-        b.value = parseInt(b.value) + 1;
-         var products = b.value;
-         return products;
-    });
+const minusItem = document.getElementById("minusBtn");
+minusItem.addEventListener("click",function(){
+    const inputItem2= document.getElementById("input")
+    if(inputItem2>=0){
+        inputItem2.value = 0;
     }
-function subBtn(a,b){
-    a.addEventListener("click",function(){
-        b.value = parseInt(b.value) - 1;
-    });
-}
-// Plus Minus Button End
+    else{
+        inputItem2.value--;
+    }
+    const itemtotal1= document.getElementById("price").innerText;
+    const itemtotal1Num =parseFloat(itemtotal1);
+    const minusitem1 = itemtotal1Num - 1219;
 
-var costText = document.getElementById("price").innerText;
-var cost = parseFloat(costText);
-var costText2 = document.getElementById("price2").innerText;
-var cost2 = parseFloat(costText2);
+    document.getElementById("price").innerText = minusitem1;
+    document.getElementById("subtotal").innerText = minusitem1;
+    document.getElementById("total").innerText = minusitem1;
 
+});
+// first item end
 
+// second item start
+const addItem2 = document.getElementById("plusBtn2");
+addItem2.addEventListener("click",function(){
+    const inputItem3 = document.getElementById("input2").value++;
+    const secondItem = document.getElementById("price2").innerText;
+    const secondItemNum = parseFloat(secondItem);
+    const addItemTwo = secondItemNum + 59;
 
-// var a = document.getElementById("input").value;
+    document.getElementById("price2").innerText =addItemTwo;
+    const secondSubTotal =document.getElementById("subtotal").innerText;
+    const secondsubTotalNum = parseFloat(secondSubTotal);
+    const secondtotalAmount = secondsubTotalNum + 59;
+    document.getElementById("subtotal").innerText = secondtotalAmount;
+    document.getElementById("total").innerText = secondtotalAmount;
 
-//  function totalPrice(a,b){
-//      var price = a* b;
-//      return price;
-//  }
-//  var p1 =  totalPrice(inputField,cost);
-//  console.log(p1);
+});
 
-//  var qun = inputField.value;
-//  var quantity = parseFloat(qun);
+const minusItem2 = document.getElementById("minusBtn2");
+minusItem2.addEventListener("click",function(){
+    const inputItem4= document.getElementById("input2")
+    if(inputItem4 >= 0){
+        inputItem4.value = 0;
+    }
+    else{
+        inputItem4.value--;
+    }
+    const secondITotal= document.getElementById("price2").innerText;
+    const secondITotalNum =parseFloat(secondITotal);
+    const minusitem2 = secondITotalNum - 59;
 
-//  var qun2 = inputField2.value;
-//  var quantity2 = parseFloat(qun2);
+    document.getElementById("price2").innerText = minusitem2;
+    document.getElementById("subtotal").innerText = minusitem2;
+    document.getElementById("total").innerText = minusitem2;
+
+});
